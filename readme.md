@@ -1,1 +1,1 @@
-![alt text](readme.png)
+![Graph of papers](readme.png)

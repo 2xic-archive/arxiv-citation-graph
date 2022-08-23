@@ -1,0 +1,4 @@
+graph ER {
+	graph [concentrate=true edgesep=10 nodesep=12 overlap=scale]
+	node [fillcolor=white style=filled]
+}
