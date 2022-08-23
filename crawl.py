@@ -20,13 +20,14 @@ def get_download_path(name):
 
 
 def download_raw(name):
-    if not os.path.isfile(get_download_path("{}.pdf".format(name))):
+    path = get_download_path("{}.pdf".format(name))
+    if not os.path.isfile(path):
         url = "https://arxiv.org/pdf/{}.pdf".format(name)
         print("Downloading {}".format(url))
         urllib.request.urlretrieve(
-            url, get_download_path("{}.pdf".format(name)))
-        return get_download_path("{}.pdf".format(name))
-    return get_download_path("{}.pdf".format(name))
+            url, path)
+        return path
+    return path
 
 
 def download_process(name):
@@ -73,8 +74,8 @@ if __name__ == "__main__":
                         metavar='seed',  nargs='+',
                         help='seed papers')
     parser.add_argument('--max-crawl', dest='max',
-                                            help='max papers to download',
-                                            required=True)
+                        help='max papers to download',
+                        required=True)
 
     args = parser.parse_args()
 
